@@ -321,7 +321,7 @@ impl State {
     /// Returns a new State, or None if memory cannot be allocated for the state
     pub fn new_opt() -> Option<State> {
         return unsafe {
-            let L = raw::lua_newstate(alloc, ptr::mut_null());
+            let L = raw::luaL_newstate();
             if L.is_not_null() {
                 raw::lua_atpanic(L, panic);
                 Some(State{ L: L, _stackspace: MINSTACK })
