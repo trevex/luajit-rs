@@ -1,0 +1,13 @@
+[package]
+
+name = "lua"
+version = "0.1.0"
+authors = [ "kevin@sb.org" ]
+
+build = "make LUA_PCNAME=luajit LUA_LIBNAME=-lluajit"
+
+
+[[lib]]
+
+name = "lua"
+path = "lib.rs"
