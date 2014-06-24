@@ -59,6 +59,7 @@ pub type lua_Alloc = extern "C" fn(ud: *mut libc::c_void, ptr: *mut libc::c_void
 // lua_State manipulation
 extern {
     pub fn lua_newstate(f: lua_Alloc, ud: *mut libc::c_void) -> *mut lua_State;
+    pub fn lj_state_newstate(f: lua_Alloc, ud: *mut libc::c_void) -> *mut lua_State;
     pub fn luaL_newstate() -> *mut lua_State;
     pub fn lua_close(L: *mut lua_State);
     pub fn lua_newthread(L: *mut lua_State) -> *mut lua_State;
